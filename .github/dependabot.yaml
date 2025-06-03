@@ -1,14 +1,14 @@
 version: 2
-registries:
-  actions:
-    type: git
-    url: https://github.com/
-    # username: x-access-token
-    # password: ${{ secrets.<your-dependabot-secret>}}
+# registries:
+  # private-actions:
+  #   type: git
+  #   url: https://github.com/
+  #   username: x-access-token
+  #   password: ${{ secrets.<your-dependabot-secret> }}
 updates:
   - package-ecosystem: "github-actions"
-    registries: 
-      - "actions"
+    # registries: 
+    #   - "private-actions"
     directory: "/"
     schedule:
       interval: "daily"
