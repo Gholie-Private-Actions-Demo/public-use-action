@@ -1,0 +1,28 @@
+name: Demo Workflow
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  demo-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run Example Action
+        uses: Gholie-Private-Actions-Demo/shared/.github/actions/example-action@example-action-v1.0.1
+        with:
+          message: 'This is a custom message'
+          importance: 'high'
+          
+      # Example with default values
+      - name: Run Example Action with Defaults
+        uses: Gholie-Private-Actions-Demo/shared/.github/actions/example-action@example-action-v1.0.1
+        with:
+          message: 'Hello World'
+          # importance will default to 'normal'
